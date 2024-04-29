@@ -5,8 +5,8 @@
     use Twilio\Rest\Client;
 
     // Twilio account SID and auth token
-    $accountSid = 'AC62225b70692bc7c54609db1fe2b3eb69';
-    $authToken = '3d3028fec9a68fad494245acc943a7ed';
+    $accountSid = 'ACCOUNT_SID';
+    $authToken = 'AUTH_TOKEN';
 
     // Create a new Twilio client
     $client = new Client($accountSid, $authToken);
@@ -31,7 +31,7 @@
     $_SESSION['otpgot'] = $otp;
 
     // Phone number to send the OTP
-    $phoneNumber = '+91 9998076910'; // Replace with the recipient's phone number
+    $phoneNumber = 'PHONE_NUMBER'; // Replace with the recipient's phone number
     $_SESSION['twphone'] = $phoneNumber;
 
     // Check if the phone number is set in the session
