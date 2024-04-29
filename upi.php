@@ -14,7 +14,6 @@
             display: block;
             color: white;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            /* font-weight: bold; */
             font-size: 30px;
             text-align: center;
             padding: 14px 16px;
@@ -84,7 +83,6 @@
     }
     ?>
 
-    <!--NAVBAR-->
     <ul style="list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: #333;">
         <li style="display:block;"><a id="a" href="payment.php">Return To Payment</a></li>
     </ul>
@@ -100,9 +98,6 @@
 
 
         <?php
-        // error_reporting(0);
-        
-        // CONNECTING TO THE DATABASE 
         
         $servername = "localhost";
         $username = "root";
@@ -125,7 +120,7 @@
         // echo $otp;
         
         $_SESSION['phone']=$_POST['phone'];
-        if (isset($_POST['upipayment']) && $phone != "") {
+        if (isset($_POST['upipayment']) && $phone != "" && (bool)$_SESSION['otpflagcheck']){
         echo '<p style="font-size:45px;font-family:calibri;text-align:center;"><b>OTP sent successfully to ' . $_SESSION['twphone'].'</b></p>';
 
             echo '<form action="\GYMMANIA\upi.php" method="post">
@@ -168,25 +163,12 @@
             //     }
             // }
 
+
         } elseif ($_POST['otp'] == "" && isset($_POST['sendotp'])) {
             echo '<script>alert("Error! You didn\'t enter the OTP send to the mobile number +91 9998076910.")</script>';
         }
 
-
-
-
-
-
         echo '</fieldset>';
-
-
-
-
-
-
-
-
-
 
         ?>
         <script>

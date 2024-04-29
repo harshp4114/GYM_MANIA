@@ -93,7 +93,7 @@ $futureDate = date('d-m-Y', strtotime($currentDate . ' + 5 days')); // Add 5 day
 
 
 <p style="font-size:60px"><b>CONGRATULATIONS!!!</b></p>
-<p>Your order has been placed for a total amount of Rs. <?php echo number_format($totalsum); echo $_SESSION['otpsend']; echo $_SESSION['otpgot'];?></p>
+<p>Your order has been placed for a total amount of Rs. <?php echo number_format($totalsum);?></p>
 <p>Your order will be delivered on <?php echo $futureDate;?></p>
 </body>
 </html>
