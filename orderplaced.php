@@ -16,14 +16,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if ($conn == false) {
     echo "Connection Unsucessful." . "Error : " . mysqli_connect_error();
 } else {
-    // echo "hello bello";
+
 }
 session_start();
 $sqlfetchtotal = "SELECT * FROM `total`";
         $fetchtotalresult = mysqli_query($conn, $sqlfetchtotal);
         if ($fetchtotalresult == true) {
         }
-        // echo'present';
         else {
             echo 'There has been some error.';
         }

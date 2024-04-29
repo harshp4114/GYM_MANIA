@@ -135,33 +135,12 @@
         }
         if (isset($_POST['upipayment'])) {
 
-            // echo 'otp require';
             require_once 'otp.php';
 
-            // if(isset($_POST['sendotp'])){
             $otpsend =(int) $_POST['otp'];
-            // $_SESSION['otpform']=$otpsend;
             $otptw=(int)$_SESSION['otpgot'];
             $_SESSION['otpsend']=(int) $_POST['otp'];
-            // }else {
-            //     echo '<script>alert("Error! You didn\'t enter the OTP sent to your mobile number.")</script>';
-            // }
-            // echo $otpgot;
-            // echo $otpsend;
-        
-            // if (isset($_POST['sendotp']) && $otpsend != "") {
-            //     if ($otpsend == $otpgot) {
-            //         echo '<p style="">Your order of total price' . $totalsum . ' has been placed.</p>';
-                    
-            // echo $otpgot;
-            // echo $otpsend;
-            //     } else {
-            //         echo '<h1 style="font-size:45px;font-family:calibri;text-align:center;">Wrong otp.</h1>';
-                    
-            // echo $otpgot;
-            // echo $otpsend;
-            //     }
-            // }
+            
 
 
         } elseif ($_POST['otp'] == "" && isset($_POST['sendotp'])) {
@@ -180,7 +159,7 @@
         <?php
     if (isset($_POST['sendotp'])) {
         // Check if OTP matches
-        if ($otptw == $otpsend) {
+        if ((int)$_POST['otp'] == (int)$_SESSION['otpgot']) {
             // Redirect to orderplaced.php
             echo 'redirectToPage("orderplaced.php");';
         } else {
